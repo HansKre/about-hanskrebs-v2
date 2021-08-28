@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import RandomContent from '../components/RandomContent';
+import RandomContent from '../components/ParallaxContent';
 
 describe('<StatsPreviewCard />', () => {
   it('should render header text', () => {

@@ -1,11 +1,47 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Karla:wght@200&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 html, body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arvo', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
+  color: #ffffff;
+  font-size: 1.9vw;
+}
+
+/* h1, h2, h3 {
+  font-family: 'Arvo', serif;
+} */
+
+h1 {
+  color: #afadb4;
+}
+
+span {
+  background-color: #2d2c30;
+  color: white;
+}
+
+h4 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 100;
+}
+
+i {
+  font-weight: 100;
+}
+
+label {
+  letter-spacing: 0.3rem;
+  font-weight: 100;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
 }
