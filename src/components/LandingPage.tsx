@@ -31,7 +31,7 @@ export default function LandingPage() {
                 <Grid item className={classes.right} container justifyContent="center" direction="column" >
                     <h3 className={classes.whiteFont}>Hello 👋</h3>
                     <h1 className={classes.whiteFont}>I'm Hans </h1>
-                    <h4 className={`${classes.whiteFont}`}>Welcome to my About Me site!</h4>
+                    <h4 className={`${classes.whiteFont}`}>Welcome To My About Me Page!</h4>
                 </Grid>
             </Grid>
         </Parallax >
