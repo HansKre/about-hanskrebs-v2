@@ -15,20 +15,24 @@ type StyleProps = {
     height: string;
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     fullHeight: {
         height: (props: StyleProps) => props.height
     },
     background: {
         backgroundSize: 'cover',
-        backgroundImage: (props: StyleProps) => {
-            if (props.backgroundImg)
-                return `url(${props.backgroundImg})`;
-            return 'unset';
+        backgroundRepeat: 'no-repeat',
+        [theme.breakpoints.up('md')]: {
+            backgroundImage: (props: StyleProps) => {
+                if (props.backgroundImg)
+                    return `url(${props.backgroundImg})`;
+                return 'unset';
+            },
+            backgroundPosition: '13.1%', // shift left a bit
         },
         backgroundColor: (props: StyleProps) => props.backgroundColor,
     },
-});
+}));
 
 export default function FullHeightWrapper(props: Props) {
     const {backgroundColor, backgroundImg, height, children} = props;

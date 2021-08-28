@@ -12,7 +12,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
   color: #ffffff;
-  font-size: 1.9vw;
+  font-size: 1.9vmax;
 }
 
 /* h1, h2, h3 {
