@@ -12,8 +12,8 @@ function App() {
   return (
     <ThemeProvider theme={CustomTheme}>
       <ParallaxProvider>
-        <FullHeightWrapper backgroundColor="#48484a" backgroundImg={hansImg} height={"920px"} ><LandingPage /></FullHeightWrapper>
-        <FullHeightWrapper backgroundColor="white"><ParallaxContent yOffset={downSm ? [-50, 40] : [-50, 80]}>
+        <FullHeightWrapper backgroundColor="#48484a" backgroundImg={hansImg} height={downSm ? "150vh" : "920px"} ><LandingPage /></FullHeightWrapper>
+        <FullHeightWrapper backgroundColor="white"><ParallaxContent yOffset={downSm ? [-40 - (window.visualViewport.width - 375) / 8, 40 - (window.visualViewport.width - 375) / 8] : [-50, 80]}>
           <h1>
             I am a <span>software architect</span> passionate about <i>web development</i> and <i><label>frontend desgin</label></i>.
           </h1>

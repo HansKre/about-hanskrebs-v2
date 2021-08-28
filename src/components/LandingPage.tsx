@@ -7,7 +7,7 @@ import hansImgMobile from '../assets/IMG_9921_matte_look_672.jpeg'
 const SPLIT = 65;
 const OFFSETS = {
     desktop: [-100, 60],
-    mobile: [-40, 15],
+    mobile: [-30, 20],
 }
 
 const useStyles = makeStyles({
@@ -35,12 +35,12 @@ export default function LandingPage() {
             {downSm
                 ? <Parallax className={classes.fullWidth} y={downSm ? OFFSETS.mobile : OFFSETS.desktop}>
                     <Grid container direction="column" justifyContent="center" alignItems="center">
-                        <div style={{backgroundImage: `url(${hansImgMobile})`, boxShadow: '0 0 15px 15px #48484a inset', backgroundSize: 'cover'}}>
-                            <img style={{filter: 'opacity(0%)', height: '60vmax'}} src={hansImgMobile} alt="Hans" />
-                        </div>
                         <h3 className={classes.whiteFont}>Hello 👋</h3>
                         <h1 className={classes.whiteFont}>I'm Hans </h1>
-                        <h4 className={`${classes.whiteFont}`}>Welcome To My About Me Page!</h4>
+                        <h4 style={{paddingBottom: '60px'}} className={`${classes.whiteFont}`}>Welcome To My About Me Page!</h4>
+                        <div style={{backgroundImage: `url(${hansImgMobile})`, boxShadow: '0 0 15px 15px #48484a inset', backgroundSize: 'cover', borderRadius: '10px'}}>
+                            <img style={{filter: 'opacity(0%)', height: '60vmax'}} src={hansImgMobile} alt="Hans" />
+                        </div>
                     </Grid>
                 </Parallax >
                 : <Parallax className={classes.fullWidth} y={downSm ? OFFSETS.mobile : OFFSETS.desktop}>
