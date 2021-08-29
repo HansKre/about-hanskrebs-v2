@@ -32,12 +32,11 @@ export default function LandingPage() {
             {downSm
                 ? <Parallax className={classes.fullWidth} y={downSm ? OFFSETS.mobile : OFFSETS.desktop}>
                     <Grid container direction="column" justifyContent="center" alignItems="center">
-                        <h3 >Hello 👋</h3>
-                        <h1 >I'm Hans </h1>
-                        <h2 style={{paddingBottom: '60px'}}>Welcome To My About Me Page!</h2>
-                        <div style={{backgroundImage: `url(${hansImgMobile})`, boxShadow: '0 0 15px 15px #48484a inset', backgroundSize: 'cover', borderRadius: '10px'}}>
-                            <img style={{filter: 'opacity(0%)', height: '60vmax'}} src={hansImgMobile} alt="Hans" />
+                        <div style={{backgroundImage: `url(${hansImgMobile})`, boxShadow: '0 0 15px 15px #48484a inset', backgroundSize: 'cover', borderRadius: '50%'}}>
+                            <img style={{filter: 'opacity(0%)', width: '80vw'}} src={hansImgMobile} alt="Hans" />
                         </div>
+                        <h1 style={{color: 'white'}} >I'm Hans </h1>
+                        <h2 style={{paddingBottom: '60px', marginLeft: '30px', marginRight: '30px', textAlign: 'center'}}>Welcome To My About Me Page!</h2>
                     </Grid>
                 </Parallax >
                 : <Parallax className={classes.fullWidth} y={downSm ? OFFSETS.mobile : OFFSETS.desktop}>
