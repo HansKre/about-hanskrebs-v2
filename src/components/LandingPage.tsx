@@ -2,12 +2,12 @@ import {Parallax} from 'react-scroll-parallax'
 import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles';
 import useBreakPoint from '../hooks/useBreakPoint';
-import hansImgMobile from '../assets/IMG_9921_matte_look_672.jpeg'
+import hansImgMobile from '../assets/IMG_9921_matte_look_avatar.jpeg'
 
 const SPLIT = 65;
 const OFFSETS = {
     desktop: [-80, 40],
-    mobile: [-30, 20],
+    mobile: [-80, 20],
 }
 
 const useStyles = makeStyles({

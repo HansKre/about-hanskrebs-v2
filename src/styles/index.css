@@ -12,7 +12,19 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
   color: #ffffff;
-  font-size: 1.9vmax;
+}
+@media (orientation: landscape) {
+  html, body {
+    font-size: 1.9vw;
+  }
+}
+@media (orientation: portrait) {
+  /* avoid using vmax value since this makes sizes jump on mobile
+    devices when adress bar disappears on scroll and viewport size changes.
+  */
+  html, body {
+    font-size: 4.0vw;
+  }
 }
 
 h1 {
