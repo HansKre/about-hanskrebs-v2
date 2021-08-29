@@ -32,7 +32,7 @@ export default function AboutMe() {
                 </Grid>
                 <Grid item className={classes.right} container justifyContent="center" >
                     <h1 className={classes.whiteFont}>About Me</h1>
-                    <h4 className={`${classes.whiteFont} ${classes.centerVisually} `}>Lorem Ipsum</h4>
+                    <h2 className={`${classes.whiteFont} ${classes.centerVisually} `}>Lorem Ipsum</h2>
                 </Grid>
             </Grid>
         </Parallax>
