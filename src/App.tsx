@@ -8,13 +8,20 @@ import hansImg from './assets/IMG_9921_matte_look_1440.jpeg'
 import useBreakPoint from './hooks/useBreakPoint';
 
 function App() {
-  const downSm = useBreakPoint('down', 'sm');
+  const downPhone = !useBreakPoint('up', 'phone', undefined, CustomTheme);
   return (
     <ThemeProvider theme={CustomTheme}>
       <ParallaxProvider>
-        <FullHeightWrapper backgroundColor="#48484a" backgroundImg={hansImg} height={downSm ? "150vh" : "920px"} ><LandingPage /></FullHeightWrapper>
+        <FullHeightWrapper backgroundColor="#48484a" backgroundImg={hansImg} height={downPhone ? "100vh" : "100vh"} ><LandingPage /></FullHeightWrapper>
         <FullHeightWrapper backgroundColor="white">
-          <ParallaxContent yOffset={downSm ? [-40 - (window.visualViewport.width - 375) / 8, 40 - (window.visualViewport.width - 375) / 8] : [-50, 70]}>
+          <ParallaxContent yOffset={
+            downPhone
+              ? (window.visualViewport.width > 765
+                ? [-30 - (window.visualViewport.width - 375) / 8, 30 - (window.visualViewport.width - 375) / 8]
+                : [0, 0]
+              )
+              : [-50 - (window.visualViewport.width - 1280) / 10, 60 + (window.visualViewport.width - 1280) / 10]
+          }>
             <h1>
               I am a <span>software architect</span> passionate about <i>web development</i> and <i><label>frontend desgin</label></i>.
             </h1>

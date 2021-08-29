@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
     background: {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('phone')]: {
             backgroundImage: (props: StyleProps) => {
                 if (props.backgroundImg)
                     return `url(${props.backgroundImg})`;
                 return 'unset';
             },
-            backgroundPosition: '13.1%', // shift left a bit
+            backgroundPosition: '13% 0', // shift left a bit
         },
         backgroundColor: (props: StyleProps) => props.backgroundColor,
     },
