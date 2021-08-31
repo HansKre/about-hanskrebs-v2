@@ -38,9 +38,9 @@ export default function Contact() {
                     <h2 style={{color: "#48484a"}}>Social Networks</h2>
                     <div style={{display: 'flex', flex: 1}}>
                         <div style={{flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '4rem'}}>
-                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://github.com/hanskre" />
-                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://www.linkedin.com/in/hans-krebs-63b35034/" />
-                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://www.instagram.com/hanso711/" />
+                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://github.com/hanskre" target="_blank" rel="noopener noreferrer" />
+                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://www.linkedin.com/in/hans-krebs-63b35034/" target="_blank" rel="noopener noreferrer" />
+                            <SocialIcon style={{height: 58, width: 58}} className={`${classes.hoverable} ${classes.onHoverSocial}`} url="https://www.instagram.com/hanso711/" target="_blank" rel="noopener noreferrer" />
                         </div>
                     </div>
                 </Grid>
