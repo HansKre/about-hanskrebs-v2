@@ -1,40 +1,15 @@
-import {Parallax} from 'react-scroll-parallax'
-import Grid from '@material-ui/core/Grid'
-import {makeStyles} from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-    fullWidth: {
-        width: '100%',
-    },
-    left: {
-        flex: '0 1 calc(100% - 64%)',
-        backgroundColor: 'blue'
-    },
-    right: {
-        flex: '0 1 64%',
-        backgroundColor: 'green'
-    },
-    whiteFont: {
-        color: 'white',
-    },
-    centerVisually: {
-        paddingRight: '25px'
-    },
-});
-
 export default function AboutMe() {
-    const classes = useStyles();
     return (
-        <Parallax className={classes.fullWidth} y={[-120, 120]}>
-            <Grid container >
-                <Grid item className={classes.left}>
-                    {/* empty */}
-                </Grid>
-                <Grid item className={classes.right} container justifyContent="center" >
-                    <h1 className={classes.whiteFont}>About Me</h1>
-                    <h2 className={`${classes.whiteFont} ${classes.centerVisually} `}>Lorem Ipsum</h2>
-                </Grid>
-            </Grid>
-        </Parallax>
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center', height: '100%'}}>
+            <h1>
+                I am a <span>software architect</span> passionate about <i>web development</i> and <i><label>frontend desgin</label></i>.
+            </h1>
+            <h2 style={{color: "#48484a"}}>
+                Besides programming, I enjoy 📸, 🚴‍♂️, good 🍷 and outdoor 🌿.
+            </h2>
+            <h1 style={{marginTop: '60px'}} >
+                <label>Please feel free to explore some of my creations on this page.</label>
+            </h1>
+        </div>
     )
 }
