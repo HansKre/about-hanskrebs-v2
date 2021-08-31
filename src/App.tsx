@@ -6,6 +6,7 @@ import hansImg from './assets/IMG_9921_matte_look_1440.jpeg'
 import useBreakPoint from './hooks/useBreakPoint';
 import MarginsLeftRight from './components/MarginsLeftRight';
 import AboutMe from './components/AboutMe';
+import Works from './components/Works';
 
 function App() {
   const downPhone = !useBreakPoint('up', 'phone', undefined, CustomTheme);
@@ -17,6 +18,11 @@ function App() {
       <FullHeightWrapper backgroundColor="white">
         <MarginsLeftRight >
           <AboutMe />
+        </MarginsLeftRight>
+      </FullHeightWrapper>
+      <FullHeightWrapper backgroundColor="#48484a" height={`${window.visualViewport.height * 6.8}px`} >
+        <MarginsLeftRight >
+          <Works />
         </MarginsLeftRight>
       </FullHeightWrapper>
     </ThemeProvider>
