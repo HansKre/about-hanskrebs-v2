@@ -8,6 +8,7 @@ import MarginsLeftRight from './components/MarginsLeftRight';
 import AboutMe from './components/AboutMe';
 import Works from './components/Works';
 import Photography from './components/Photography';
+import Contact from './components/Contact';
 
 function App() {
   const downPhone = !useBreakPoint('up', 'phone', undefined, CustomTheme);
@@ -29,6 +30,11 @@ function App() {
       <FullHeightWrapper backgroundColor="black" height={`${window.visualViewport.height * 1.7}px`}>
         <MarginsLeftRight >
           <Photography />
+        </MarginsLeftRight>
+      </FullHeightWrapper>
+      <FullHeightWrapper backgroundColor="white">
+        <MarginsLeftRight >
+          <Contact />
         </MarginsLeftRight>
       </FullHeightWrapper>
     </ThemeProvider>
