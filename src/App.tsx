@@ -7,6 +7,7 @@ import useBreakPoint from './hooks/useBreakPoint';
 import MarginsLeftRight from './components/MarginsLeftRight';
 import AboutMe from './components/AboutMe';
 import Works from './components/Works';
+import Photography from './components/Photography';
 
 function App() {
   const downPhone = !useBreakPoint('up', 'phone', undefined, CustomTheme);
@@ -23,6 +24,11 @@ function App() {
       <FullHeightWrapper backgroundColor="#48484a" height={`${window.visualViewport.height * 6.8}px`} >
         <MarginsLeftRight >
           <Works />
+        </MarginsLeftRight>
+      </FullHeightWrapper>
+      <FullHeightWrapper backgroundColor="black" height={`${window.visualViewport.height * 1.7}px`}>
+        <MarginsLeftRight >
+          <Photography />
         </MarginsLeftRight>
       </FullHeightWrapper>
     </ThemeProvider>
