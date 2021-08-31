@@ -32,7 +32,7 @@ export default function Contact() {
     const classes = useStyles();
     return (
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}} >
-            <h1>Contact 🎙</h1>
+            <h1>Contact Hans 🎙</h1>
             <Grid container>
                 <Grid item container direction='column' xs={12} md={6} >
                     <h2 style={{color: "#48484a"}}>Social Networks</h2>
