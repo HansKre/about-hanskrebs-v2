@@ -6,7 +6,7 @@ import hansImg from './assets/IMG_9921_matte_look_1440.jpeg'
 import useBreakPoint from './hooks/useBreakPoint';
 import MarginsLeftRight from './components/MarginsLeftRight';
 import AboutMe from './components/AboutMe';
-import Works from './components/Works';
+import FrontendWorks from './components/FrontendWorks';
 import Photography from './components/Photography';
 import Contact from './components/Contact';
 
@@ -24,7 +24,7 @@ function App() {
       </FullHeightWrapper>
       <FullHeightWrapper backgroundColor="#48484a" height={`${window.visualViewport.height * 6.8}px`} >
         <MarginsLeftRight >
-          <Works />
+          <FrontendWorks />
         </MarginsLeftRight>
       </FullHeightWrapper>
       <FullHeightWrapper backgroundColor="black" height={`${window.visualViewport.height * 1.7}px`}>

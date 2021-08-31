@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Works() {
+export default function FrontendWorks() {
     const flexRowRef = useRef<HTMLDivElement>(null);
     const [flexRowWidth, setWidth] = useState(0);
     const classes = useStyles({flexRowWidth});
@@ -59,7 +59,7 @@ export default function Works() {
 
     return (
         <>
-            <h1>Works 🔮</h1>
+            <h1>Frontend Works 🔮</h1>
             <h2 >
                 As my preferred techstack I'm using <span>React</span> with <span>Typescript</span> and <span>Material-UI</span> 💻.
             </h2>
