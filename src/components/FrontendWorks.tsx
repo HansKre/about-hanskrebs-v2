@@ -9,6 +9,7 @@ import carbonImg from '../assets/works/carbon-emissions.gif'
 import dionysosImg from '../assets/works/dionysos.png'
 import pomodoroImg from '../assets/works/pomodoro.gif'
 import calcImg from '../assets/works/calc.gif'
+import {CSSStyle} from '../types/types';
 
 const MARGINS_TOP = 200;
 const MARGINS_LEFT_RIGHT = 60;
@@ -17,16 +18,18 @@ type StyleProps = {
     flexRowWidth: number;
 }
 
-const useStyles = makeStyles({
-    hoverable: {
-        transition: 'all .2s ease-in-out',
-        "&:hover": {
-            transform: 'scale(1.29)',
-        },
+const hoverable: CSSStyle = {
+    transition: 'all .2s ease-in-out',
+    "&:hover": {
+        transform: 'scale(1.29)',
     },
+}
+
+const useStyles = makeStyles({
     img: {
         borderRadius: '10px',
         position: 'relative',
+        hoverable
     },
     scale10: {
         transform: 'scale(1.25)',
@@ -71,7 +74,7 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}}>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://vigorous-wright-d3c341.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
                                 src={orderSummaryImg}
                                 alt={orderSummaryImg} /></a>
                         </div>
@@ -89,7 +92,7 @@ export default function FrontendWorks() {
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                             <a style={{marginBottom: '-5px'}} href='https://calculator4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10}`}
                                 src={calcImg}
                                 alt={calcImg} /></a>
                         </div>
@@ -99,7 +102,7 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://hardcore-bhabha-ce15d5.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
                                 src={carbonImg}
                                 alt={carbonImg} /></a>
                         </div>
@@ -117,7 +120,7 @@ export default function FrontendWorks() {
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                             <a style={{marginBottom: '-5px'}} href='https://reverent-benz-f8a629.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10}`}
                                 src={dionysosImg}
                                 alt={dionysosImg} /></a>
                         </div>
@@ -127,7 +130,7 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://pomodoro4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
                                 src={pomodoroImg}
                                 alt={pomodoroImg} /></a>
                         </div>
@@ -146,14 +149,14 @@ export default function FrontendWorks() {
                             </div>
                             <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                                 <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                    className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.hoverable}`}
+                                    className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft}`}
                                     src={statsPreviewCardImgMobile}
                                     alt={statsPreviewCardImgMobile} /></a>
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'center', marginTop: `${MARGINS_TOP * 0.4}px`, marginBottom: '70px'}}>
                             <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.landscapeImg} ${classes.marginLeft} ${classes.hoverable}`}
+                                className={`${classes.img} ${classes.landscapeImg} ${classes.marginLeft}`}
                                 src={statsPreviewCardImgDesktop}
                                 alt={statsPreviewCardImgDesktop} /></a>
                         </div>
