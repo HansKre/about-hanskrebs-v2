@@ -1,11 +1,14 @@
 import {Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
+import ProgressiveImage from 'react-progressive-image';
+import LoadingAnim from './loading-anim/LoadingAnim';
 
 
 type Props = {
     backgroundColor: string;
     children?: React.ReactNode;
     backgroundImg?: string;
+    backgroundImgLow?: string;
     height?: string;
 }
 
@@ -35,13 +38,35 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function FullHeightWrapper(props: Props) {
-    const {backgroundColor, backgroundImg, height, children} = props;
+    const {backgroundColor, backgroundImg, backgroundImgLow, height, children} = props;
     const classes = useStyles({
         backgroundColor,
         backgroundImg: backgroundImg || '',
         height: height || "100vh",
     });
-    return <Grid container justifyContent="center" alignItems="center" className={`${classes.fullHeight} ${classes.background}`}>
-        {children}
-    </Grid>;
+
+    return <>
+        {(backgroundImg && backgroundImgLow)
+            ? <ProgressiveImage src={backgroundImg || ''} placeholder={backgroundImgLow || ''}>
+                {(src: string | undefined, loading: boolean) => (
+                    <>
+                        {loading ? <LoadingBackground /> : <FullSizeBackground />}
+                    </>
+                )}
+            </ProgressiveImage>
+            : <FullSizeBackground />
+        }
+    </>
+
+    function FullSizeBackground() {
+        return <Grid container justifyContent="center" alignItems="center" className={`${classes.fullHeight} ${classes.background}`}>
+            {children}
+        </Grid>;
+    }
+
+    function LoadingBackground() {
+        return <Grid style={{backgroundColor: 'black'}} container justifyContent="center" alignItems="center" className={`${classes.fullHeight}`}>
+            <LoadingAnim />
+        </Grid>;
+    }
 }
