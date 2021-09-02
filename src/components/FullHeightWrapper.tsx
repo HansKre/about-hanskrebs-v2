@@ -8,7 +8,6 @@ type Props = {
     backgroundColor: string;
     children?: React.ReactNode;
     backgroundImg?: string;
-    backgroundImgLow?: string;
     height?: string;
 }
 
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function FullHeightWrapper(props: Props) {
-    const {backgroundColor, backgroundImg, backgroundImgLow, height, children} = props;
+    const {backgroundColor, backgroundImg, height, children} = props;
     const classes = useStyles({
         backgroundColor,
         backgroundImg: backgroundImg || '',
@@ -46,8 +45,8 @@ export default function FullHeightWrapper(props: Props) {
     });
 
     return <>
-        {(backgroundImg && backgroundImgLow)
-            ? <ProgressiveImage src={backgroundImg || ''} placeholder={backgroundImgLow || ''}>
+        {(backgroundImg)
+            ? <ProgressiveImage src={backgroundImg || ''} placeholder={''}>
                 {(src: string | undefined, loading: boolean) => (
                     <>
                         {loading ? <LoadingBackground /> : <FullSizeBackground />}
