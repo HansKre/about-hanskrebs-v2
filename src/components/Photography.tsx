@@ -63,17 +63,17 @@ export default function Photography() {
                     id='flexRow1'
                     style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginBottom: '40px'}}
                 >
-                    <a href={assetLink(thumbnailRows[0])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.portraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[0])} alt={thumbnailRows[0]} /> </a>
-                    <a href={assetLink(thumbnailRows[1])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.landscapeImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[1])} alt={thumbnailRows[1]} /> </a>
-                    <a href={assetLink(thumbnailRows[2])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.portraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[2])} alt={thumbnailRows[2]} /> </a>
-                    <a href={assetLink(thumbnailRows[3])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.landscapeImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[3])} alt={thumbnailRows[3]} /> </a>
+                    <a href={assetLink(thumbnailRows[0])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.portraitImg}`} src={assetThumbnailLink(thumbnailRows[0])} alt={thumbnailRows[0]} /> </a>
+                    <a href={assetLink(thumbnailRows[1])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.landscapeImg}`} src={assetThumbnailLink(thumbnailRows[1])} alt={thumbnailRows[1]} /> </a>
+                    <a href={assetLink(thumbnailRows[2])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.portraitImg}`} src={assetThumbnailLink(thumbnailRows[2])} alt={thumbnailRows[2]} /> </a>
+                    <a href={assetLink(thumbnailRows[3])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.landscapeImg}`} src={assetThumbnailLink(thumbnailRows[3])} alt={thumbnailRows[3]} /> </a>
                     <div className={classes.stackedRow} >
-                        <a href={assetLink(thumbnailRows[4])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[4])} alt={thumbnailRows[4]} /> </a>
-                        <a href={assetLink(thumbnailRows[5])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[5])} alt={thumbnailRows[5]} /> </a>
+                        <a href={assetLink(thumbnailRows[4])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg}`} src={assetThumbnailLink(thumbnailRows[4])} alt={thumbnailRows[4]} /> </a>
+                        <a href={assetLink(thumbnailRows[5])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg}`} src={assetThumbnailLink(thumbnailRows[5])} alt={thumbnailRows[5]} /> </a>
                     </div>
                     <div className={classes.stackedRow} >
-                        <a href={assetLink(thumbnailRows[6])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[6])} alt={thumbnailRows[6]} /> </a>
-                        <a href={assetLink(thumbnailRows[7])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg} ${classes.hover}`} src={assetThumbnailLink(thumbnailRows[7])} alt={thumbnailRows[7]} /> </a>
+                        <a href={assetLink(thumbnailRows[6])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg}`} src={assetThumbnailLink(thumbnailRows[6])} alt={thumbnailRows[6]} /> </a>
+                        <a href={assetLink(thumbnailRows[7])} target='_blank' rel="noreferrer" ><img className={`${classes.img} ${classes.stackedPortraitImg}`} src={assetThumbnailLink(thumbnailRows[7])} alt={thumbnailRows[7]} /> </a>
                     </div>
                 </div>
             }
