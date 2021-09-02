@@ -1,5 +1,6 @@
 import {useState, useLayoutEffect, useRef} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
+import {hoverable} from '../styles/Styles'
 
 const thumbnailRows = [
     'DSC09761_p_thumbnail.jpg',
@@ -19,7 +20,7 @@ type StyleProps = {
 const useStyles = makeStyles({
     img: {
         borderRadius: '10px',
-        transition: 'all .2s ease-in-out',
+        ...hoverable,
     },
     landscapeImg: (props: StyleProps) => ({
         width: `${props.flexRowWidth / 2}px`,
@@ -32,11 +33,6 @@ const useStyles = makeStyles({
     stackedPortraitImg: (props: StyleProps) => ({
         height: `${(props.flexRowWidth / 2) / 1.5 / 2 - 20}px`,
     }),
-    hover: {
-        "&:hover": {
-            transform: 'scale(1.04)',
-        },
-    },
     stackedRow: {
         display: 'flex',
         flexDirection: 'column',
