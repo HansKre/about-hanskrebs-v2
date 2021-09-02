@@ -2,7 +2,7 @@ import {useState, useLayoutEffect, useRef} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import {CSSStyle} from '../types/types';
-import ProgressiveImg from './ProgressiveImg';
+import ProgressiveImgWithFallback from './ProgressiveImgWithFallback';
 import {hoverable} from '../styles/Styles';
 
 const MARGINS_TOP = 200;
@@ -78,9 +78,11 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}}>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://vigorous-wright-d3c341.netlify.app/' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/fem-order-summary.png').default}
-                                    placeholder={require('../assets/works/fem-order-summary_lowres.png').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/fem-order-summary.webp').default}
+                                    srcFallback={require('../assets/works/fem-order-summary.png').default}
+                                    placeholder={require('../assets/works/fem-order-summary_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/fem-order-summary_lowres.png').default}
                                     className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
                                     animShift={animShiftPortraitRight}
                                 />
@@ -100,9 +102,11 @@ export default function FrontendWorks() {
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                             <a style={{marginBottom: '-5px'}} href='https://calculator4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/calc.gif').default}
-                                    placeholder={require('../assets/works/calc_lowres.gif').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/calc.webp').default}
+                                    srcFallback={require('../assets/works/calc.gif').default}
+                                    placeholder={require('../assets/works/calc_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/calc_lowres.gif').default}
                                     className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginLeft}`}
                                     animShift={animShiftPortraitLeft}
                                 />
@@ -114,9 +118,11 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://hardcore-bhabha-ce15d5.netlify.app/' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/carbon-emissions.gif').default}
-                                    placeholder={require('../assets/works/carbon-emissions_lowres.gif').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/carbon-emissions.webp').default}
+                                    srcFallback={require('../assets/works/carbon-emissions.gif').default}
+                                    placeholder={require('../assets/works/carbon-emissions_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/carbon-emissions_lowres.gif').default}
                                     className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
                                     animShift={animShiftPortraitRight}
                                 />
@@ -136,9 +142,11 @@ export default function FrontendWorks() {
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                             <a style={{marginBottom: '-5px'}} href='https://reverent-benz-f8a629.netlify.app/' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/dionysos.png').default}
-                                    placeholder={require('../assets/works/dionysos_lowres.png').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/dionysos.webp').default}
+                                    srcFallback={require('../assets/works/dionysos.png').default}
+                                    placeholder={require('../assets/works/dionysos_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/dionysos_lowres.png').default}
                                     className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginLeft}`}
                                     animShift={animShiftPortraitLeft}
                                 />
@@ -150,9 +158,11 @@ export default function FrontendWorks() {
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
                             <a style={{marginBottom: '-5px'}} href='https://pomodoro4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/pomodoro.gif').default}
-                                    placeholder={require('../assets/works/pomodoro_lowres.gif').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/pomodoro.webp').default}
+                                    srcFallback={require('../assets/works/pomodoro.gif').default}
+                                    placeholder={require('../assets/works/pomodoro_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/pomodoro_lowres.gif').default}
                                     className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
                                     animShift={animShiftPortraitRight}
                                 />
@@ -173,9 +183,11 @@ export default function FrontendWorks() {
                             </div>
                             <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
                                 <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' >
-                                    <ProgressiveImg
-                                        src={require('../assets/works/fem-stats-preview-card-mobile.png').default}
-                                        placeholder={require('../assets/works/fem-stats-preview-card-mobile_lowres.png').default}
+                                    <ProgressiveImgWithFallback
+                                        src={require('../assets/works/fem-stats-preview-card-mobile.webp').default}
+                                        srcFallback={require('../assets/works/fem-stats-preview-card-mobile.png').default}
+                                        placeholder={require('../assets/works/fem-stats-preview-card-mobile_lowres.webp').default}
+                                        placeholderFallback={require('../assets/works/fem-stats-preview-card-mobile_lowres.png').default}
                                         className={`${classes.imgWorks} ${classes.portraitImg} ${classes.marginLeft}`}
                                         animShift={animShiftPortraitLeft}
                                     />
@@ -184,9 +196,11 @@ export default function FrontendWorks() {
                         </div>
                         <div style={{display: 'flex', justifyContent: 'center', marginTop: `${MARGINS_TOP * 0.4}px`, marginBottom: '70px'}}>
                             <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' >
-                                <ProgressiveImg
-                                    src={require('../assets/works/fem-stats-preview-card-desktop.png').default}
-                                    placeholder={require('../assets/works/fem-stats-preview-card-desktop_lowres.png').default}
+                                <ProgressiveImgWithFallback
+                                    src={require('../assets/works/fem-stats-preview-card-desktop.webp').default}
+                                    srcFallback={require('../assets/works/fem-stats-preview-card-desktop.png').default}
+                                    placeholder={require('../assets/works/fem-stats-preview-card-desktop_lowres.webp').default}
+                                    placeholderFallback={require('../assets/works/fem-stats-preview-card-desktop_lowres.png').default}
                                     className={`${classes.imgWorks} ${classes.landscapeImg} ${classes.marginLeft}`}
                                     animShift={animShiftLandscape}
                                 />
