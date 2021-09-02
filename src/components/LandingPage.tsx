@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles';
-import useBreakPoint from '../hooks/useBreakPoint';
+// import useBreakPoint from '../hooks/useBreakPoint';
 import hansImgMobile from '../assets/IMG_9921_matte_look_avatar.jpeg'
 
 const SPLIT = 65;
@@ -20,7 +20,15 @@ const useStyles = makeStyles({
 
 export default function LandingPage() {
     const classes = useStyles();
-    const downPhone = !useBreakPoint('up', 'phone');
+    /* 
+        useMediaQuery does seem to return true on initial load,
+        only to return false immediately later. This causes
+        both background ressources to load (on large screens),
+        as well as a rerender when downPhone changes.
+        // FIXME: investigate further and fix
+    */
+    // const downPhone = !useBreakPoint('up', 'phone');
+    const downPhone = window.matchMedia('(max-width: 765px)').matches;
     return (
         <>
             {downPhone
