@@ -1,15 +1,9 @@
-import {useState, useLayoutEffect, useRef} from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+import {useState, useLayoutEffect, useRef} from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-
-import statsPreviewCardImgDesktop from '../assets/works/fem-stats-preview-card-desktop.png'
-import statsPreviewCardImgMobile from '../assets/works/fem-stats-preview-card-mobile.png'
-import orderSummaryImg from '../assets/works/fem-order-summary.png'
-import carbonImg from '../assets/works/carbon-emissions.gif'
-import dionysosImg from '../assets/works/dionysos.png'
-import pomodoroImg from '../assets/works/pomodoro.gif'
-import calcImg from '../assets/works/calc.gif'
 import {CSSStyle} from '../types/types';
+import ProgressiveImg from './ProgressiveImg';
+import {hoverable} from '../styles/Styles';
 
 const MARGINS_TOP = 200;
 const MARGINS_LEFT_RIGHT = 60;
@@ -18,20 +12,30 @@ type StyleProps = {
     flexRowWidth: number;
 }
 
-const hoverable: CSSStyle = {
-    transition: 'all .2s ease-in-out',
+const imgBase: CSSStyle = {
+    borderRadius: '10px',
+    position: 'relative',
+}
+
+const hoverableScaled: CSSStyle = {
+    ...hoverable,
     "&:hover": {
         transform: 'scale(1.29)',
     },
 }
 
+const animShiftPortraitRight = {top: '35%', left: '25%'}
+const animShiftPortraitLeft = {top: '35%', left: '47%'}
+const animShiftLandscape = {top: '35%', left: '49%'}
+
 const useStyles = makeStyles({
-    img: {
-        borderRadius: '10px',
-        position: 'relative',
-        hoverable
+    imgWorks: {
+        ...imgBase,
+        ...hoverable,
     },
-    scale10: {
+    imgWorksScaled: {
+        ...imgBase,
+        ...hoverableScaled,
         transform: 'scale(1.25)',
     },
     landscapeImg: (props: StyleProps) => ({
@@ -73,10 +77,14 @@ export default function FrontendWorks() {
                 {flexRowWidth && <div style={{display: 'flex', flex: '1 1 100%', marginTop: `${MARGINS_TOP}px`}}>
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}}>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://vigorous-wright-d3c341.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
-                                src={orderSummaryImg}
-                                alt={orderSummaryImg} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://vigorous-wright-d3c341.netlify.app/' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/fem-order-summary.png').default}
+                                    placeholder={require('../assets/works/fem-order-summary_lowres.png').default}
+                                    className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
+                                    animShift={animShiftPortraitRight}
+                                />
+                            </a>
                         </div>
                         <div style={{display: 'flex', flexDirection: 'column', flex: '0 1 50%', height: '100%', justifyContent: 'center'}}>
                             <h1>Order Summary Component</h1>
@@ -91,20 +99,28 @@ export default function FrontendWorks() {
                             <h2 style={{textAlign: 'end', paddingLeft: '70px', paddingTop: 0}}>Showcase for passing data between components using <span>props</span>, <span>grid layout</span> and hand-picked fonts to get that digital look.</h2>
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://calculator4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10}`}
-                                src={calcImg}
-                                alt={calcImg} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://calculator4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/calc.gif').default}
+                                    placeholder={require('../assets/works/calc_lowres.gif').default}
+                                    className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginLeft}`}
+                                    animShift={animShiftPortraitLeft}
+                                />
+                            </a>
                         </div>
                     </Paper>
                 </div>}
                 {flexRowWidth && <div style={{display: 'flex', flex: '1 1 100%', marginTop: `${MARGINS_TOP}px`}}>
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://hardcore-bhabha-ce15d5.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
-                                src={carbonImg}
-                                alt={carbonImg} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://hardcore-bhabha-ce15d5.netlify.app/' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/carbon-emissions.gif').default}
+                                    placeholder={require('../assets/works/carbon-emissions_lowres.gif').default}
+                                    className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
+                                    animShift={animShiftPortraitRight}
+                                />
+                            </a>
                         </div>
                         <div style={{display: 'flex', flexDirection: 'column', flex: '0 1 50%', height: '100%', justifyContent: 'center'}}>
                             <h1>Electricity to Carbon Emissions</h1>
@@ -119,20 +135,28 @@ export default function FrontendWorks() {
                             <h2 style={{textAlign: 'end', paddingLeft: '70px', paddingTop: 0}}>Responsive page for Dionysos Restaurant with design inspiration from <span>Behance</span>.</h2>
                         </div>
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://reverent-benz-f8a629.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft} ${classes.scale10}`}
-                                src={dionysosImg}
-                                alt={dionysosImg} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://reverent-benz-f8a629.netlify.app/' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/dionysos.png').default}
+                                    placeholder={require('../assets/works/dionysos_lowres.png').default}
+                                    className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginLeft}`}
+                                    animShift={animShiftPortraitLeft}
+                                />
+                            </a>
                         </div>
                     </Paper>
                 </div>}
                 {flexRowWidth && <div style={{display: 'flex', flex: '1 1 100%', marginTop: `${MARGINS_TOP}px`}}>
                     <Paper elevation={12} style={{display: 'flex', flex: '1 1 100%'}} >
                         <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-end'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://pomodoro4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.portraitImg} ${classes.marginRight} ${classes.scale10}`}
-                                src={pomodoroImg}
-                                alt={pomodoroImg} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://pomodoro4711.s3.eu-central-1.amazonaws.com/index.html' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/pomodoro.gif').default}
+                                    placeholder={require('../assets/works/pomodoro_lowres.gif').default}
+                                    className={`${classes.imgWorksScaled} ${classes.portraitImg} ${classes.marginRight}`}
+                                    animShift={animShiftPortraitRight}
+                                />
+                            </a>
                         </div>
                         <div style={{display: 'flex', flexDirection: 'column', flex: '0 1 50%', height: '100%', justifyContent: 'center'}}>
                             <h1>React Pomodoro Click</h1>
@@ -148,17 +172,25 @@ export default function FrontendWorks() {
                                 <h2 style={{textAlign: 'end', paddingLeft: '70px', paddingTop: 0}}>Yet another beautiful, responsive & reuseable react component.</h2>
                             </div>
                             <div style={{display: 'flex', flex: '0 1 50%', justifyContent: 'flex-start'}}>
-                                <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                    className={`${classes.img} ${classes.portraitImg} ${classes.marginLeft}`}
-                                    src={statsPreviewCardImgMobile}
-                                    alt={statsPreviewCardImgMobile} /></a>
+                                <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' >
+                                    <ProgressiveImg
+                                        src={require('../assets/works/fem-stats-preview-card-mobile.png').default}
+                                        placeholder={require('../assets/works/fem-stats-preview-card-mobile_lowres.png').default}
+                                        className={`${classes.imgWorks} ${classes.portraitImg} ${classes.marginLeft}`}
+                                        animShift={animShiftPortraitLeft}
+                                    />
+                                </a>
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'center', marginTop: `${MARGINS_TOP * 0.4}px`, marginBottom: '70px'}}>
-                            <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' ><img
-                                className={`${classes.img} ${classes.landscapeImg} ${classes.marginLeft}`}
-                                src={statsPreviewCardImgDesktop}
-                                alt={statsPreviewCardImgDesktop} /></a>
+                            <a style={{marginBottom: '-5px'}} href='https://dazzling-roentgen-c2c3a7.netlify.app/' target='_blank' rel='noreferrer' >
+                                <ProgressiveImg
+                                    src={require('../assets/works/fem-stats-preview-card-desktop.png').default}
+                                    placeholder={require('../assets/works/fem-stats-preview-card-desktop_lowres.png').default}
+                                    className={`${classes.imgWorks} ${classes.landscapeImg} ${classes.marginLeft}`}
+                                    animShift={animShiftLandscape}
+                                />
+                            </a>
                         </div>
                     </Paper>
                 </div>}
